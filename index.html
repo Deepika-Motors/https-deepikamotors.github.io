@@ -83,8 +83,107 @@
             color: var(--primary);
             text-transform: uppercase;
             letter-spacing: 1px;
-            border-left: 5px solid var(--accent);
-            padding-left: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .logo i {
+            color: var(--accent);
+            font-size: 2rem;
+        }
+
+        .logo span {
+            font-weight: 800;
+        }
+
+        /* --- GALLERY SECTION --- */
+        .gallery {
+            padding: 80px 5%;
+            background-color: white;
+            text-align: center;
+        }
+
+        .gallery h2 {
+            font-size: 2.2rem;
+            margin-bottom: 50px;
+            color: var(--primary);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            height: 250px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+            color: white;
+            padding: 20px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        /* --- VIDEO SECTION --- */
+        .video-section {
+            padding: 80px 5%;
+            background-color: var(--secondary);
+            text-align: center;
+            color: white;
+        }
+
+        .video-section h2 {
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .video-container {
+            max-width: 900px;
+            margin: 40px auto 0;
+            position: relative;
+            padding-bottom: 56.25%;
+            /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 2px solid var(--accent);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
         }
 
         .nav-btn {
@@ -287,6 +386,25 @@
                 flex-direction: column;
             }
         }
+
+        .map-btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 8px 15px;
+            margin-top: 10px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .map-btn:hover {
+            background-color: white;
+            color: var(--accent);
+            transform: translateY(-2px);
+        }
     </style>
 </head>
 
@@ -301,7 +419,10 @@
     </div>
 
     <header>
-        <div class="logo">DEEPIKA MOTORS</div>
+        <a href="#" class="logo">
+            <i class="fas fa-cogs"></i>
+            <div>DEEPIKA <span>MOTORS</span></div>
+        </a>
         <a href="#contact" class="nav-btn">Contact Us</a>
     </header>
 
@@ -333,6 +454,49 @@
         </div>
     </section>
 
+    <!-- Gallery Section -->
+    <section class="gallery">
+        <h2>Experience Excellence</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=800&q=80"
+                    alt="Engine Parts">
+                <div class="gallery-overlay">
+                    <h3>Precision Engineered</h3>
+                    <p>Genuine parts for optimal performance</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1504222490245-eecd8c37d422?auto=format&fit=crop&w=800&q=80"
+                    alt="Mechanic Working">
+                <div class="gallery-overlay">
+                    <h3>Expert Service</h3>
+                    <p>Professional care for your vehicle</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1568283096533-078a23621942?auto=format&fit=crop&w=800&q=80"
+                    alt="Auto Shop Interior">
+                <div class="gallery-overlay">
+                    <h3>Huge Inventory</h3>
+                    <p>Everything you need under one roof</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="video-section">
+        <h2>See Us in Action</h2>
+        <p>Providing top-notch automotive solutions for over 25 years.</p>
+        <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/2h-2P7uJ8q0"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+        </div>
+    </section>
+
     <section class="container">
         <div class="details-grid">
             <div class="text-block">
@@ -359,9 +523,12 @@
             <div class="footer-section">
                 <h3>Visit Store</h3>
                 <p><i class="fas fa-map-marker-alt"></i> <strong>Deepika Motors</strong></p>
-                <p>Near Chaity Durga Puja Complex,</p>
-                <p>Kutchery Road, Ranchi,</p>
-                <p>Jharkhand.</p>
+                <p>Shop No 12, Charkha Mandir Road,</p>
+                <p>Katachery Road, Ranchi,</p>
+                <p>Jharkhand, 834001.</p>
+                <a href="https://maps.app.goo.gl/LBA8Rjrt3qJjDaMh6" target="_blank" class="map-btn">
+                    <i class="fas fa-location-arrow"></i> Get Directions
+                </a>
             </div>
             <div class="footer-section">
                 <h3>Contact Info</h3>
@@ -376,7 +543,7 @@
             </div>
         </div>
         <div class="copyright">
-            &copy; 2024 Deepika Motors Ranchi. All Rights Reserved.
+            &copy; 2025 Deepika Motors Ranchi. All Rights Reserved.
         </div>
     </footer>
 
