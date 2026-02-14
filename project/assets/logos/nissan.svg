@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 170">
+  <defs>
+    <linearGradient id="nissanChrome" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e0e0e0;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#ffffff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#a0a0a0;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Outer Ring -->
+  <circle cx="100" cy="85" r="75" fill="none" stroke="url(#nissanChrome)" stroke-width="15" />
+  
+  <!-- Horizontal Bar -->
+  <rect x="10" y="60" width="180" height="50" fill="url(#nissanChrome)" />
+  
+  <!-- Text -->
+  <text x="100" y="93" font-family="Arial, sans-serif" font-weight="900" font-size="32" text-anchor="middle" fill="#333" letter-spacing="3">NISSAN</text>
+</svg>
